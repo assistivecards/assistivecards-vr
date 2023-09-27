@@ -201,30 +201,6 @@ public class TopAppBarController : MonoBehaviour
                 TTSPanel.didLanguageChange = true;
                 PromoScreen.didLanguageChange = true;
                 PromoScreenUniApp.didLanguageChange = true;
-                Board.didLanguageChange = true;
-                BoardGeneration.didLanguageChange = true;
-                SplitPuzzleBoardGenerator.didLanguageChange = true;
-                MatchPairsBoardGenerator.didLanguageChange = true;
-                DrawLinesBoardGenerator.didLanguageChange = true;
-                ScratcherBoardGenerator.didLanguageChange = true;
-                FingerPaintBoardGenerator.didLanguageChange = true;
-                PiecePuzzleBoardGenerator.didLanguageChange = true;
-                RopeCutBoardGenerator.didLanguageChange = true;
-                SlingBoardGenerator.didLanguageChange = true;
-                DragInsideBoardGenerator.didLanguageChange = true;
-                PressCardsBoardGenerator.didLanguageChange = true;
-                DrawShapesBoardGenerator.didLanguageChange = true;
-                StackCardsBoardGenerator.didLanguageChange = true;
-                CardWhackBoardGenerator.didLanguageChange = true;
-                FindCardBoardGenerator.didLanguageChange = true;
-                SizePuzzleBoardGenerator.didLanguageChange = true;
-                ChooseBoardGenerator.didLanguageChange = true;
-                AlphabetOrderBoardGenerator.didLanguageChange = true;
-                CardRumbleBoardGenerator.didLanguageChange = true;
-                ThrowCardsBoardGenerator.didLanguageChange = true;
-                CardGoalBoardGenerator.didLanguageChange = true;
-                CardMazeBoardGenerator.didLanguageChange = true;
-                GameSelectionPanel.didLanguageChange = true;
 
                 if (languageController.selectedLanguage.name == "Arabic" || languageController.selectedLanguage.name == "Urdu")
                 {

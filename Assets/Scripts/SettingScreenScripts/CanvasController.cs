@@ -369,30 +369,6 @@ public class CanvasController : MonoBehaviour
         PackSelectionPanel.didLanguageChange = true;
         PromoScreen.didLanguageChange = true;
         PromoScreenUniApp.didLanguageChange = true;
-        Board.isBackAfterSignOut = true;
-        BoardGeneration.isBackAfterSignOut = true;
-        SplitPuzzleBoardGenerator.isBackAfterSignOut = true;
-        MatchPairsBoardGenerator.isBackAfterSignOut = true;
-        DrawLinesBoardGenerator.isBackAfterSignOut = true;
-        ScratcherBoardGenerator.isBackAfterSignOut = true;
-        FingerPaintBoardGenerator.isBackAfterSignOut = true;
-        PiecePuzzleBoardGenerator.isBackAfterSignOut = true;
-        RopeCutBoardGenerator.isBackAfterSignOut = true;
-        SlingBoardGenerator.isBackAfterSignOut = true;
-        DragInsideBoardGenerator.isBackAfterSignOut = true;
-        PressCardsBoardGenerator.isBackAfterSignOut = true;
-        DrawShapesBoardGenerator.isBackAfterSignOut = true;
-        StackCardsBoardGenerator.isBackAfterSignOut = true;
-        CardWhackBoardGenerator.isBackAfterSignOut = true;
-        FindCardBoardGenerator.isBackAfterSignOut = true;
-        SizePuzzleBoardGenerator.isBackAfterSignOut = true;
-        ChooseBoardGenerator.isBackAfterSignOut = true;
-        AlphabetOrderBoardGenerator.isBackAfterSignOut = true;
-        CardRumbleBoardGenerator.isBackAfterSignOut = true;
-        ThrowCardsBoardGenerator.isBackAfterSignOut = true;
-        CardGoalBoardGenerator.isBackAfterSignOut = true;
-        CardMazeBoardGenerator.isBackAfterSignOut = true;
-        GameSelectionPanel.didLanguageChange = true;
 
         if (notificationPreferences.reminderPreference == "Daily")
         {
