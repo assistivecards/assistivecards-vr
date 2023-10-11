@@ -143,4 +143,5 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Throw Cards.unity
     guid: 57f8ad36c36b7dc4fa802c948a49803b
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e392cea037be1d2489df4c022d0a4df2, type: 2}
