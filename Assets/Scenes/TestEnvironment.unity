@@ -558,6 +558,7 @@ GameObject:
   - component: {fileID: 625331380}
   - component: {fileID: 625331379}
   - component: {fileID: 625331381}
+  - component: {fileID: 625331382}
   m_Layer: 0
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
@@ -702,7 +703,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625331372}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2213c36610e3b1c4bbf886810ed9db12, type: 3}
   m_Name: 
@@ -790,6 +791,30 @@ MonoBehaviour:
   m_LocomotionProvider: {fileID: 625331378}
   m_MinHeight: 0
   m_MaxHeight: Infinity
+--- !u!114 &625331382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625331372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3687790d0649db1489f22842561f9ed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primaryButtonAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Primary Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 6627f418-dd6d-4281-b14d-028f0bef88a0
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -3739241804739094654, guid: c348712bda248c246b8c49b3db54643f, type: 3}
 --- !u!1 &669864232
 GameObject:
   m_ObjectHideFlags: 0
