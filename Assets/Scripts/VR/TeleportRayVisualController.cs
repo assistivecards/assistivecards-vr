@@ -17,13 +17,21 @@ public class TeleportRayVisualController : MonoBehaviour
 
     public bool CheckIfActivated()
     {
-        if (primaryButtonAction.action.ReadValue<float>() > activationThreshold)
+        if (GetComponent<SwitchBetweenMovementModes>().canTeleport)
         {
-            return true;
+            if (primaryButtonAction.action.ReadValue<float>() > activationThreshold)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {
             return false;
         }
+
     }
 }

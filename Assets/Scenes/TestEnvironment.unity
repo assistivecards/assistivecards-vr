@@ -1457,6 +1457,7 @@ GameObject:
   - component: {fileID: 625331382}
   - component: {fileID: 625331383}
   - component: {fileID: 625331384}
+  - component: {fileID: 625331385}
   m_Layer: 0
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
@@ -1753,6 +1754,31 @@ MonoBehaviour:
     m_Reference: {fileID: 740814786949833197, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   teleportRay: {fileID: 1505009476}
   activationThreshold: 0.1
+--- !u!114 &625331385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625331372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e586aa415285034c8080be0b97e1fac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondaryButtonAction:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Secondary Button
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 4363f865-b637-45b8-838f-07af06f4bf58
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -8378791573979061145, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  canTeleport: 0
 --- !u!1 &669864232
 GameObject:
   m_ObjectHideFlags: 0
