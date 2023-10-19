@@ -2401,6 +2401,7 @@ GameObject:
   - component: {fileID: 742840482}
   - component: {fileID: 742840487}
   - component: {fileID: 742840488}
+  - component: {fileID: 742840489}
   m_Layer: 0
   m_Name: Left Controller
   m_TagString: Untagged
@@ -2694,7 +2695,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 742840489}
+        m_TargetAssemblyTypeName: SetGrabbableParent, Assembly-CSharp
+        m_MethodName: ParentGrabbableToInteractor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -2774,6 +2787,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &742840489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 742840480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af632b90b8f5f54b9f70fea0c7b5aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &744497744
 GameObject:
   m_ObjectHideFlags: 0
@@ -2787,6 +2812,7 @@ GameObject:
   - component: {fileID: 744497746}
   - component: {fileID: 744497751}
   - component: {fileID: 744497752}
+  - component: {fileID: 744497753}
   m_Layer: 0
   m_Name: Right Controller
   m_TagString: Untagged
@@ -3080,7 +3106,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 744497753}
+        m_TargetAssemblyTypeName: SetGrabbableParent, Assembly-CSharp
+        m_MethodName: ParentGrabbableToInteractor
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -3160,6 +3198,18 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &744497753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744497744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2af632b90b8f5f54b9f70fea0c7b5aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &756520767
 GameObject:
   m_ObjectHideFlags: 0
