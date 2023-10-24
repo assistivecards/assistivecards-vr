@@ -872,6 +872,35 @@ public class GameAPI : MonoBehaviour
         SetExp(totalExp);
     }
 
+    public void SetMovementTypePreference(string movementType)
+    {
+        PlayerPrefs.SetString("MovementTypePreference", movementType);
+    }
+
+    public string GetMovementTypePreference()
+    {
+        return PlayerPrefs.GetString("MovementTypePreference", "Continuous");
+    }
+
+    public void SetRotationTypePreference(string rotationType)
+    {
+        PlayerPrefs.SetString("RotationTypePreference", rotationType);
+    }
+
+    public string GetRotationTypePreference()
+    {
+        return PlayerPrefs.GetString("RotationTypePreference", "Continuous");
+    }
+
+    public void SetTunnelingVignettePreference(int isTunnelingVignetteActive)
+    {
+        PlayerPrefs.SetInt("TunnelingVignettePreference", isTunnelingVignetteActive);
+    }
+
+    public int GetTunnelingVignettePreference()
+    {
+        return PlayerPrefs.GetInt("TunnelingVignettePreference", 1);
+    }
     ///<summary>
     ///Deletes all the data stored in PlayerPrefs on sign out.
     ///</summary>
