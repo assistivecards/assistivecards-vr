@@ -822,6 +822,54 @@ public class GameAPI : MonoBehaviour
     }
 
     ///<summary>
+    ///Takes in a single parameter of type string named movementType and stores it in PlayerPrefs.
+    ///</summary>
+    public void SetMovementTypePreference(string movementType)
+    {
+        PlayerPrefs.SetString("MovementTypePreference", movementType);
+    }
+
+    ///<summary>
+    ///Retrieves the movement type preference data stored in PlayerPrefs. Default value is "Continuous".
+    ///</summary>
+    public string GetMovementTypePreference()
+    {
+        return PlayerPrefs.GetString("MovementTypePreference", "Continuous");
+    }
+
+    ///<summary>
+    ///Takes in a single parameter of type string named rotationType and stores it in PlayerPrefs.
+    ///</summary>
+    public void SetRotationTypePreference(string rotationType)
+    {
+        PlayerPrefs.SetString("RotationTypePreference", rotationType);
+    }
+
+    ///<summary>
+    ///Retrieves the rotation type preference data stored in PlayerPrefs. Default value is "Continuous".
+    ///</summary>
+    public string GetRotationTypePreference()
+    {
+        return PlayerPrefs.GetString("RotationTypePreference", "Continuous");
+    }
+
+    ///<summary>
+    ///Takes in a single parameter of type integer named isTunnelingVignetteActive and stores it in PlayerPrefs.
+    ///</summary>
+    public void SetTunnelingVignettePreference(int isTunnelingVignetteActive)
+    {
+        PlayerPrefs.SetInt("TunnelingVignettePreference", isTunnelingVignetteActive);
+    }
+
+    ///<summary>
+    ///Retrieves the tunneling vignette preference data stored in PlayerPrefs. Default value is 1.
+    ///</summary>
+    public int GetTunnelingVignettePreference()
+    {
+        return PlayerPrefs.GetInt("TunnelingVignettePreference", 1);
+    }
+
+    ///<summary>
     ///Takes in a single parameter of type integer named totalExp and stores it in PlayerPrefs.
     ///</summary>
     public void SetExp(int totalExp)
@@ -872,35 +920,6 @@ public class GameAPI : MonoBehaviour
         SetExp(totalExp);
     }
 
-    public void SetMovementTypePreference(string movementType)
-    {
-        PlayerPrefs.SetString("MovementTypePreference", movementType);
-    }
-
-    public string GetMovementTypePreference()
-    {
-        return PlayerPrefs.GetString("MovementTypePreference", "Continuous");
-    }
-
-    public void SetRotationTypePreference(string rotationType)
-    {
-        PlayerPrefs.SetString("RotationTypePreference", rotationType);
-    }
-
-    public string GetRotationTypePreference()
-    {
-        return PlayerPrefs.GetString("RotationTypePreference", "Continuous");
-    }
-
-    public void SetTunnelingVignettePreference(int isTunnelingVignetteActive)
-    {
-        PlayerPrefs.SetInt("TunnelingVignettePreference", isTunnelingVignetteActive);
-    }
-
-    public int GetTunnelingVignettePreference()
-    {
-        return PlayerPrefs.GetInt("TunnelingVignettePreference", 1);
-    }
     ///<summary>
     ///Deletes all the data stored in PlayerPrefs on sign out.
     ///</summary>

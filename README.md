@@ -576,6 +576,60 @@ Retrieves the TTS status preference data stored in PlayerPrefs.
 public int GetTTSStatusPreference()
 ```
 
+## SetMovementTypePreference
+
+Takes in a single parameter of type string named movementType and stores it in PlayerPrefs.
+
+```Csharp
+public void SetMovementTypePreference(string movementType)
+```
+
+## GetMovementTypePreference
+
+Retrieves the movement type preference data stored in PlayerPrefs.
+
+> Default value is "Continuous".
+
+```Csharp
+ public string GetMovementTypePreference()
+```
+
+## SetRotationTypePreference
+
+Takes in a single parameter of type string named rotationType and stores it in PlayerPrefs.
+
+```Csharp
+public void SetRotationTypePreference(string rotationType)
+```
+
+## GetRotationTypePreference
+
+Retrieves the rotation type preference data stored in PlayerPrefs.
+
+> Default value is "Continuous".
+
+```Csharp
+ public string GetRotationTypePreference()
+```
+
+## SetTunnelingVignettePreference
+
+Takes in a single parameter of type integer named isTunnelingVignetteActive and stores it in PlayerPrefs.
+
+```Csharp
+public void SetTunnelingVignettePreference(int isTunnelingVignetteActive)
+```
+
+## GetTunnelingVignettePreference
+
+Retrieves the tunneling vignette preference data stored in PlayerPrefs.
+
+> Default value is 1.
+
+```Csharp
+public int GetTunnelingVignettePreference()
+```
+
 ## SetExp
 
 Takes in a single parameter of type integer named totalExp and stores it in PlayerPrefs.
