@@ -33,4 +33,11 @@ public class HandMenuSettings : MonoBehaviour
         tunnelingVignetteOffToggle.isOn = gameAPI.GetTunnelingVignettePreference() == 0 ? true : false;
     }
 
+    public void OnSaveSettingsButtonClick()
+    {
+        gameAPI.SetMovementTypePreference(continuousMovementToggle.isOn ? "Continuous" : "Teleportation");
+        gameAPI.SetRotationTypePreference(continuousRotationToggle.isOn ? "Continuous" : "Snap");
+        gameAPI.SetTunnelingVignettePreference(tunnelingVignetteOnToggle.isOn ? 1 : 0);
+    }
+
 }
