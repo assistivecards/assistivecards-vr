@@ -15,6 +15,7 @@ public class HandMenuSettings : MonoBehaviour
     public Toggle tunnelingVignetteOffToggle;
     public MovementTypeController movementTypeController;
     public RotationTypeController rotationTypeController;
+    public TunnelingVignetteVisibilityController tunnelingVignetteVisibilityController;
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -43,6 +44,7 @@ public class HandMenuSettings : MonoBehaviour
 
         movementTypeController.ApplyMovementPreference();
         rotationTypeController.ApplyRotationPreference();
+        tunnelingVignetteVisibilityController.ApplyVignettePreference();
 
     }
 
