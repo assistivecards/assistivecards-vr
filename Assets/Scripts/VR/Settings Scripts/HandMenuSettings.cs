@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +17,10 @@ public class HandMenuSettings : MonoBehaviour
     public MovementTypeController movementTypeController;
     public RotationTypeController rotationTypeController;
     public TunnelingVignetteVisibilityController tunnelingVignetteVisibilityController;
+    [SerializeField] Button controlsSaveButton;
+    [SerializeField] Button audioSaveButton;
+    private bool enableSaveButton = false;
+
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -24,6 +29,11 @@ public class HandMenuSettings : MonoBehaviour
     void Start()
     {
         GetPreferences();
+        continuousMovementToggle.onValueChanged.AddListener(delegate { EnableSaveButton(); });
+        // teleportationMovementToggle.onValueChanged.AddListener(delegate { EnableSaveButton(); });
+        continuousRotationToggle.onValueChanged.AddListener(delegate { EnableSaveButton(); });
+        // snapRotationToggle.onValueChanged.AddListener(delegate { EnableSaveButton(); });
+        tunnelingVignetteOnToggle.onValueChanged.AddListener(delegate { EnableSaveButton(); });
     }
 
     private void GetPreferences()
@@ -46,6 +56,24 @@ public class HandMenuSettings : MonoBehaviour
         rotationTypeController.ApplyRotationPreference();
         tunnelingVignetteVisibilityController.ApplyVignettePreference();
 
+        controlsSaveButton.interactable = false;
+        audioSaveButton.interactable = false;
+        enableSaveButton = false;
     }
+
+    private void Update()
+    {
+        if ((controlsSaveButton.interactable == false && audioSaveButton.interactable == false) && enableSaveButton)
+        {
+            controlsSaveButton.interactable = true;
+            audioSaveButton.interactable = true;
+        }
+    }
+
+    private void EnableSaveButton()
+    {
+        enableSaveButton = true;
+    }
+
 
 }
