@@ -13,6 +13,8 @@ public class HandMenuSettings : MonoBehaviour
     public Toggle snapRotationToggle;
     public Toggle tunnelingVignetteOnToggle;
     public Toggle tunnelingVignetteOffToggle;
+    public MovementTypeController movementTypeController;
+    public RotationTypeController rotationTypeController;
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
@@ -38,6 +40,10 @@ public class HandMenuSettings : MonoBehaviour
         gameAPI.SetMovementTypePreference(continuousMovementToggle.isOn ? "Continuous" : "Teleportation");
         gameAPI.SetRotationTypePreference(continuousRotationToggle.isOn ? "Continuous" : "Snap");
         gameAPI.SetTunnelingVignettePreference(tunnelingVignetteOnToggle.isOn ? 1 : 0);
+
+        movementTypeController.ApplyMovementPreference();
+        rotationTypeController.ApplyRotationPreference();
+
     }
 
 }
