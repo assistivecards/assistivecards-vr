@@ -32,6 +32,7 @@ public class HandMenuSettings : MonoBehaviour
 
     private void OnEnable()
     {
+        GetPreferences();
         controlsSaveButton.interactable = false;
         audioSaveButton.interactable = false;
         enableSaveButton = false;
@@ -40,12 +41,11 @@ public class HandMenuSettings : MonoBehaviour
         color = text.color;
         fadeoutcolor = color;
         fadeoutcolor.a = .5f;
-        LeanTween.value(gameObject, updateValueExampleCallback, color, fadeoutcolor, .2f);
+        LeanTween.value(gameObject, UpdateValue, color, fadeoutcolor, .2f);
     }
 
     void Start()
     {
-        GetPreferences();
         continuousMovementToggle.onValueChanged.AddListener(delegate { EnableSaveButton(); });
         continuousRotationToggle.onValueChanged.AddListener(delegate { EnableSaveButton(); });
         tunnelingVignetteOnToggle.onValueChanged.AddListener(delegate { EnableSaveButton(); });
@@ -74,7 +74,7 @@ public class HandMenuSettings : MonoBehaviour
         controlsSaveButton.interactable = false;
         audioSaveButton.interactable = false;
         enableSaveButton = false;
-        LeanTween.value(gameObject, updateValueExampleCallback, color, fadeoutcolor, .2f);
+        LeanTween.value(gameObject, UpdateValue, color, fadeoutcolor, .2f);
     }
 
     private void Update()
@@ -83,7 +83,8 @@ public class HandMenuSettings : MonoBehaviour
         {
             controlsSaveButton.interactable = true;
             audioSaveButton.interactable = true;
-            LeanTween.value(gameObject, updateValueExampleCallback, fadeoutcolor, color, .2f);
+            color.a = 1;
+            LeanTween.value(gameObject, UpdateValue, fadeoutcolor, color, .2f);
         }
     }
 
@@ -92,7 +93,7 @@ public class HandMenuSettings : MonoBehaviour
         enableSaveButton = true;
     }
 
-    void updateValueExampleCallback(Color val)
+    void UpdateValue(Color val)
     {
         text.color = val;
     }
