@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,20 +20,34 @@ public class HandMenuSettings : MonoBehaviour
     public TunnelingVignetteVisibilityController tunnelingVignetteVisibilityController;
     [SerializeField] Button controlsSaveButton;
     [SerializeField] Button audioSaveButton;
-    private bool enableSaveButton = false;
+    private bool enableSaveButton;
+    TMP_Text text;
+    Color color;
+    Color fadeoutcolor;
 
     private void Awake()
     {
         gameAPI = Camera.main.GetComponent<GameAPI>();
     }
 
+    private void OnEnable()
+    {
+        controlsSaveButton.interactable = false;
+        audioSaveButton.interactable = false;
+        enableSaveButton = false;
+
+        text = controlsSaveButton.transform.GetChild(0).GetComponent<TMP_Text>();
+        color = text.color;
+        fadeoutcolor = color;
+        fadeoutcolor.a = .5f;
+        LeanTween.value(gameObject, updateValueExampleCallback, color, fadeoutcolor, .2f);
+    }
+
     void Start()
     {
         GetPreferences();
         continuousMovementToggle.onValueChanged.AddListener(delegate { EnableSaveButton(); });
-        // teleportationMovementToggle.onValueChanged.AddListener(delegate { EnableSaveButton(); });
         continuousRotationToggle.onValueChanged.AddListener(delegate { EnableSaveButton(); });
-        // snapRotationToggle.onValueChanged.AddListener(delegate { EnableSaveButton(); });
         tunnelingVignetteOnToggle.onValueChanged.AddListener(delegate { EnableSaveButton(); });
     }
 
@@ -59,6 +74,7 @@ public class HandMenuSettings : MonoBehaviour
         controlsSaveButton.interactable = false;
         audioSaveButton.interactable = false;
         enableSaveButton = false;
+        LeanTween.value(gameObject, updateValueExampleCallback, color, fadeoutcolor, .2f);
     }
 
     private void Update()
@@ -67,12 +83,18 @@ public class HandMenuSettings : MonoBehaviour
         {
             controlsSaveButton.interactable = true;
             audioSaveButton.interactable = true;
+            LeanTween.value(gameObject, updateValueExampleCallback, fadeoutcolor, color, .2f);
         }
     }
 
     private void EnableSaveButton()
     {
         enableSaveButton = true;
+    }
+
+    void updateValueExampleCallback(Color val)
+    {
+        text.color = val;
     }
 
 
