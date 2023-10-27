@@ -5,10 +5,20 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class InteractorEventsController : MonoBehaviour
 {
 
+    public HandMenuController handMenuController;
+    public GameObject handMenuCanvas;
+    public GameObject settingsButtonCanvas;
+
     public void ParentGrabbableToInteractor(SelectEnterEventArgs args)
     {
         if (args.interactableObject.transform.GetComponent<XRGrabInteractable>())
         {
+            if (handMenuCanvas.activeInHierarchy || settingsButtonCanvas.activeInHierarchy)
+            {
+                handMenuController.DisableHandMenu();
+                handMenuController.DisableSettingsButton();
+            }
+
             args.interactableObject.transform.SetParent(transform);
         }
     }

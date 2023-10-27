@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class HandMenuController : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class HandMenuController : MonoBehaviour
     public GameObject settingsButtonCanvas;
     // public InputActionProperty menuButtonAction;
     // public bool isHandMenuAvailable;
+    public XRDirectInteractor leftInteractor;
+    public XRDirectInteractor rightInteractor;
 
     public void EnableHandMenu()
     {
@@ -35,8 +38,12 @@ public class HandMenuController : MonoBehaviour
 
     public void EnableSettingsButton()
     {
-        settingsButtonCanvas.SetActive(true);
-        LeanTween.value(settingsButtonCanvas, UpdateSettingsButtonAlphaValue, 0, 1, .2f);
+        if (!leftInteractor.hasSelection && !rightInteractor.hasSelection)
+        {
+            settingsButtonCanvas.SetActive(true);
+            LeanTween.value(settingsButtonCanvas, UpdateSettingsButtonAlphaValue, 0, 1, .2f);
+        }
+
     }
 
     public void DisableSettingsButton()
