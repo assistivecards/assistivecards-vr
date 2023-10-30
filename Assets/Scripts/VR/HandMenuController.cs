@@ -86,4 +86,14 @@ public class HandMenuController : MonoBehaviour
     //         }
     //     }
     // }
+
+    public void EnablePokeAnim()
+    {
+        rightInteractor.transform.GetChild(0).GetComponent<Animator>().SetFloat("Poke", 1);
+    }
+
+    public void DisablePokeAnim()
+    {
+        rightInteractor.transform.GetChild(0).GetComponent<Animator>().SetFloat("Poke", 0);
+    }
 }
