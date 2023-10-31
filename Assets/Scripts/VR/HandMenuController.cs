@@ -13,6 +13,7 @@ public class HandMenuController : MonoBehaviour
     // public bool isHandMenuAvailable;
     public XRDirectInteractor leftInteractor;
     public XRDirectInteractor rightInteractor;
+    public bool isHoveringUI;
 
     public void EnableHandMenu()
     {
@@ -61,39 +62,25 @@ public class HandMenuController : MonoBehaviour
         settingsButtonCanvas.GetComponent<CanvasGroup>().alpha = val;
     }
 
-    // void UpdateIndicatorAlphaValue(float val)
-    // {
-    //     indicatorCanvas.GetComponent<CanvasGroup>().alpha = val;
-    // }
-
-    // public void AllowHandMenu()
-    // {
-    //     isHandMenuAvailable = true;
-    // }
-
-    // public void DisallowHandMenu()
-    // {
-    //     isHandMenuAvailable = false;
-    // }
-
-    // private void Update()
-    // {
-    //     if (isHandMenuAvailable)
-    //     {
-    //         if (menuButtonAction.action.triggered)
-    //         {
-    //             EnableHandMenu();
-    //         }
-    //     }
-    // }
+    private void Update()
+    {
+        if (isHoveringUI)
+        {
+            rightInteractor.transform.GetChild(0).GetComponent<Animator>().SetFloat("Poke", 1, .07f, Time.deltaTime);
+        }
+        else if (!isHoveringUI)
+        {
+            rightInteractor.transform.GetChild(0).GetComponent<Animator>().SetFloat("Poke", 0, .07f, Time.deltaTime);
+        }
+    }
 
     public void EnablePokeAnim()
     {
-        rightInteractor.transform.GetChild(0).GetComponent<Animator>().SetFloat("Poke", 1);
+        isHoveringUI = true;
     }
 
     public void DisablePokeAnim()
     {
-        rightInteractor.transform.GetChild(0).GetComponent<Animator>().SetFloat("Poke", 0);
+        isHoveringUI = false;
     }
 }
