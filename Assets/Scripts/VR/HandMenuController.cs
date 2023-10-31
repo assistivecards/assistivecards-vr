@@ -26,17 +26,6 @@ public class HandMenuController : MonoBehaviour
         LeanTween.value(handMenuCanvas, UpdateHandMenuAlphaValue, handMenuCanvas.GetComponent<CanvasGroup>().alpha, 0, .2f).setOnComplete(() => handMenuCanvas.SetActive(false));
     }
 
-    // public void EnableIndicator()
-    // {
-    //     indicatorCanvas.SetActive(true);
-    //     LeanTween.value(indicatorCanvas, UpdateIndicatorAlphaValue, 0, 1, .2f);
-    // }
-
-    // public void DisableIndicator()
-    // {
-    //     LeanTween.value(indicatorCanvas, UpdateIndicatorAlphaValue, indicatorCanvas.GetComponent<CanvasGroup>().alpha, 0, .2f).setOnComplete(() => indicatorCanvas.SetActive(false));
-    // }
-
     public void EnableSettingsButton()
     {
         if (!leftInteractor.hasSelection && !rightInteractor.hasSelection)
