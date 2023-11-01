@@ -25,7 +25,9 @@ public class HandMenuSettings : MonoBehaviour
     [SerializeField] Button audioSaveButton;
     [SerializeField] Button miscSaveButton;
     private bool enableSaveButton;
-    TMP_Text text;
+    TMP_Text controlsSaveButtonText;
+    TMP_Text audioSaveButtonText;
+    TMP_Text miscSaveButtonText;
     Color color;
     Color fadeoutcolor;
 
@@ -42,8 +44,10 @@ public class HandMenuSettings : MonoBehaviour
         miscSaveButton.interactable = false;
         enableSaveButton = false;
 
-        text = controlsSaveButton.transform.GetChild(0).GetComponent<TMP_Text>();
-        color = text.color;
+        controlsSaveButtonText = controlsSaveButton.transform.GetChild(0).GetComponent<TMP_Text>();
+        audioSaveButtonText = audioSaveButton.transform.GetChild(0).GetComponent<TMP_Text>();
+        miscSaveButtonText = miscSaveButton.transform.GetChild(0).GetComponent<TMP_Text>();
+        color = controlsSaveButtonText.color;
         fadeoutcolor = color;
         fadeoutcolor.a = .5f;
         LeanTween.value(gameObject, UpdateValue, color, fadeoutcolor, .2f);
@@ -107,7 +111,9 @@ public class HandMenuSettings : MonoBehaviour
 
     void UpdateValue(Color val)
     {
-        text.color = val;
+        controlsSaveButtonText.color = val;
+        audioSaveButtonText.color = val;
+        miscSaveButtonText.color = val;
     }
 
 
