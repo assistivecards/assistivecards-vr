@@ -55,11 +55,11 @@ public class HandMenuController : MonoBehaviour
     {
         if (isHoveringUI)
         {
-            rightInteractor.transform.GetChild(0).GetComponent<Animator>().SetFloat("Poke", 1, .07f, Time.deltaTime);
+            rightInteractor.transform.GetChild(0).GetComponent<Animator>().SetFloat("Poke", 1, .1f, Time.deltaTime);
         }
         else if (!isHoveringUI)
         {
-            rightInteractor.transform.GetChild(0).GetComponent<Animator>().SetFloat("Poke", 0, .07f, Time.deltaTime);
+            rightInteractor.transform.GetChild(0).GetComponent<Animator>().SetFloat("Poke", 0, .1f, Time.deltaTime);
         }
     }
 
