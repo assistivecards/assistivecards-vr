@@ -34,6 +34,13 @@ public class HapticFeedbackController : MonoBehaviour
     public Haptic hapticOnHoverEnter;
     public Haptic hapticOnHoverExit;
     public Haptic hapticOnActivate;
+    GameAPI gameAPI;
+    public bool canVibrate;
+
+    private void Awake()
+    {
+        gameAPI = Camera.main.GetComponent<GameAPI>();
+    }
 
     void Start()
     {
@@ -44,6 +51,19 @@ public class HapticFeedbackController : MonoBehaviour
         interactable.selectEntered.AddListener(hapticOnHoverEnter.TriggerHaptic);
         interactable.selectEntered.AddListener(hapticOnHoverExit.TriggerHaptic);
         interactable.selectEntered.AddListener(hapticOnActivate.TriggerHaptic);
+    }
+
+    public void ApplyHapticFeedbackPreference()
+    {
+        if (gameAPI.GetHapticsPreference() == 1)
+        {
+            canVibrate = true;
+        }
+
+        else if (gameAPI.GetHapticsPreference() == 0)
+        {
+            canVibrate = false;
+        }
     }
 
 }
