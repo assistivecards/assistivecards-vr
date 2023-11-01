@@ -3,17 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class HapticFeedbackController : MonoBehaviour
+[System.Serializable]
+public class Haptic
 {
     [Range(0, 1)]
     public float intensity;
     public float duration;
-
-    void Start()
-    {
-        XRBaseInteractable interactable = GetComponent<XRBaseInteractable>();
-        interactable.selectEntered.AddListener(TriggerHaptic);
-    }
 
     public void TriggerHaptic(BaseInteractionEventArgs eventArgs)
     {
@@ -30,4 +25,25 @@ public class HapticFeedbackController : MonoBehaviour
             controller.SendHapticImpulse(intensity, duration);
         }
     }
+}
+
+public class HapticFeedbackController : MonoBehaviour
+{
+    public Haptic hapticOnSelectEnter;
+    public Haptic hapticOnSelectExit;
+    public Haptic hapticOnHoverEnter;
+    public Haptic hapticOnHoverExit;
+    public Haptic hapticOnActivate;
+
+    void Start()
+    {
+        XRBaseInteractable interactable = GetComponent<XRBaseInteractable>();
+
+        interactable.selectEntered.AddListener(hapticOnSelectEnter.TriggerHaptic);
+        interactable.selectEntered.AddListener(hapticOnSelectExit.TriggerHaptic);
+        interactable.selectEntered.AddListener(hapticOnHoverEnter.TriggerHaptic);
+        interactable.selectEntered.AddListener(hapticOnHoverExit.TriggerHaptic);
+        interactable.selectEntered.AddListener(hapticOnActivate.TriggerHaptic);
+    }
+
 }
