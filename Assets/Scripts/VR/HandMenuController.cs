@@ -23,7 +23,12 @@ public class HandMenuController : MonoBehaviour
 
     public void DisableHandMenu()
     {
-        LeanTween.value(handMenuCanvas, UpdateHandMenuAlphaValue, handMenuCanvas.GetComponent<CanvasGroup>().alpha, 0, .2f).setOnComplete(() => handMenuCanvas.SetActive(false));
+        if (HandMenuPersistenceOnTeleportation.isHandMenuActive == false)
+        {
+            LeanTween.value(handMenuCanvas, UpdateHandMenuAlphaValue, handMenuCanvas.GetComponent<CanvasGroup>().alpha, 0, .2f).setOnComplete(() => handMenuCanvas.SetActive(false));
+        }
+
+        HandMenuPersistenceOnTeleportation.isHandMenuActive = false;
     }
 
     public void EnableSettingsButton()
