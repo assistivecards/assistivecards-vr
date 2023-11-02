@@ -69,7 +69,7 @@ public class HandMenuSettings : MonoBehaviour
         snapRotationToggle.isOn = gameAPI.GetRotationTypePreference() == "Snap" ? true : false;
         tunnelingVignetteOnToggle.isOn = gameAPI.GetTunnelingVignettePreference() == 1 ? true : false;
         tunnelingVignetteOffToggle.isOn = gameAPI.GetTunnelingVignettePreference() == 0 ? true : false;
-        hapticFeedbackOnToggle.isOn = gameAPI.GetHapticsPreference() == 0 ? true : false;
+        hapticFeedbackOnToggle.isOn = gameAPI.GetHapticsPreference() == 1 ? true : false;
         hapticFeedbackOffToggle.isOn = gameAPI.GetHapticsPreference() == 0 ? true : false;
     }
 
