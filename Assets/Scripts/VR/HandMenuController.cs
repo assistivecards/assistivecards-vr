@@ -7,10 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class HandMenuController : MonoBehaviour
 {
     public GameObject handMenuCanvas;
-    // public GameObject indicatorCanvas;
     public GameObject settingsButtonCanvas;
-    // public InputActionProperty menuButtonAction;
-    // public bool isHandMenuAvailable;
     public XRDirectInteractor leftInteractor;
     public XRDirectInteractor rightInteractor;
     public bool isHoveringUI;
@@ -33,7 +30,7 @@ public class HandMenuController : MonoBehaviour
 
     public void EnableSettingsButton()
     {
-        if (!leftInteractor.hasSelection && !rightInteractor.hasSelection)
+        if (!leftInteractor.hasSelection && !rightInteractor.hasSelection && !handMenuCanvas.activeInHierarchy)
         {
             settingsButtonCanvas.SetActive(true);
             LeanTween.value(settingsButtonCanvas, UpdateSettingsButtonAlphaValue, 0, 1, .2f);
@@ -43,7 +40,12 @@ public class HandMenuController : MonoBehaviour
 
     public void DisableSettingsButton()
     {
-        LeanTween.value(settingsButtonCanvas, UpdateSettingsButtonAlphaValue, settingsButtonCanvas.GetComponent<CanvasGroup>().alpha, 0, .2f).setOnComplete(() => settingsButtonCanvas.SetActive(false));
+        if (HandMenuPersistenceOnTeleportation.isSettingsButtonActive == false)
+        {
+            LeanTween.value(settingsButtonCanvas, UpdateSettingsButtonAlphaValue, settingsButtonCanvas.GetComponent<CanvasGroup>().alpha, 0, .2f).setOnComplete(() => settingsButtonCanvas.SetActive(false));
+        }
+
+        HandMenuPersistenceOnTeleportation.isSettingsButtonActive = false;
     }
 
     void UpdateHandMenuAlphaValue(float val)
