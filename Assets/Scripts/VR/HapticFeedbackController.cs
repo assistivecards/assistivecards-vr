@@ -7,6 +7,7 @@ public class HapticFeedbackController : MonoBehaviour
 {
     GameAPI gameAPI;
     public static bool canVibrate;
+    public Haptic hapticOnUIInteraction;
 
     private void Awake()
     {
@@ -28,6 +29,14 @@ public class HapticFeedbackController : MonoBehaviour
         else if (gameAPI.GetHapticsPreference() == 0)
         {
             canVibrate = false;
+        }
+    }
+
+    public void TriggerHapticOnUIInteraction(XRBaseController controller)
+    {
+        if (hapticOnUIInteraction.intensity > 0 && canVibrate)
+        {
+            controller.SendHapticImpulse(hapticOnUIInteraction.intensity, hapticOnUIInteraction.duration);
         }
     }
 
