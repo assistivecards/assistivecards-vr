@@ -27,6 +27,9 @@ TagManager:
   - CardPositions1
   - CardPositions2
   - CardPositions3
+  - Teddy
+  - Ball
+  - Broccoli
   layers:
   - Default
   - TransparentFX
