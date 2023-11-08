@@ -19,7 +19,8 @@ public class InteractorEventsController : MonoBehaviour
                 handMenuController.DisableSettingsButton();
             }
 
-            args.interactableObject.transform.SetParent(transform);
+            if (!args.interactableObject.transform.GetComponent<ConfigurableJoint>())
+                args.interactableObject.transform.SetParent(transform);
         }
     }
 
