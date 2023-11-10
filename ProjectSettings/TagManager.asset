@@ -32,6 +32,7 @@ TagManager:
   - Broccoli
   - Marker
   - Eraser
+  - Floor
   layers:
   - Default
   - TransparentFX
