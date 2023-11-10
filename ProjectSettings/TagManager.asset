@@ -30,6 +30,8 @@ TagManager:
   - Teddy
   - Ball
   - Broccoli
+  - Marker
+  - Eraser
   layers:
   - Default
   - TransparentFX
