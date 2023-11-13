@@ -33,6 +33,7 @@ TagManager:
   - Marker
   - Eraser
   - Floor
+  - Target
   layers:
   - Default
   - TransparentFX
