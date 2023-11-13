@@ -17,10 +17,9 @@ public class Breakable : MonoBehaviour
             // }
 
             // Destroy(gameObject);
-            transform.GetChild(0).gameObject.SetActive(true);
-            GetComponent<MeshCollider>().enabled = false;
-            GetComponent<MeshRenderer>().enabled = false;
-            GetComponent<Rigidbody>().useGravity = false;
+            brokenObject.gameObject.SetActive(true);
+            brokenObject.transform.SetParent(GameObject.Find("Room").transform);
+            Destroy(gameObject);
         }
     }
 
