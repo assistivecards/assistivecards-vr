@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class DartTarget : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Target"))
         {
             Debug.Log("COLLIDED");
-            gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            transform.parent.gameObject.GetComponent<Rigidbody>().isKinematic = true;
         }
     }
 }
