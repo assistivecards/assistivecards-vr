@@ -22,6 +22,8 @@ public class InteractorEventsController : MonoBehaviour
             if (!args.interactableObject.transform.GetComponent<ConfigurableJoint>())
                 args.interactableObject.transform.SetParent(transform);
         }
+
+        args.interactableObject.transform.gameObject.GetComponent<Outline>().enabled = false;
     }
 
     public void HighlightGrabbable(HoverEnterEventArgs args)
