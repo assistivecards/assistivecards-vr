@@ -15,7 +15,7 @@ public class WateringCan : MonoBehaviour
     {
         if (rightController.interactablesSelected.Count != 0)
         {
-            if (rightController.interactablesSelected[0].transform.name == "WateringCan" && Vector3.Angle(Vector3.down, rightController.transform.forward) <= 50)
+            if (rightController.interactablesSelected[0].transform.name == "WateringCan New" && Vector3.Angle(Vector3.down, rightController.transform.forward) <= 50)
             {
                 waterParticleSystem.Play();
             }
@@ -28,7 +28,7 @@ public class WateringCan : MonoBehaviour
 
         else if (leftController.interactablesSelected.Count != 0)
         {
-            if (leftController.interactablesSelected[0].transform.name == "WateringCan" && Vector3.Angle(Vector3.down, leftController.transform.forward) <= 50)
+            if (leftController.interactablesSelected[0].transform.name == "WateringCan New" && Vector3.Angle(Vector3.down, leftController.transform.forward) <= 50)
             {
                 waterParticleSystem.Play();
             }
