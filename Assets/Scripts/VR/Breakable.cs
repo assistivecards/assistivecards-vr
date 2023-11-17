@@ -5,6 +5,7 @@ using UnityEngine;
 public class Breakable : MonoBehaviour
 {
     public GameObject brokenObject;
+    public GameObject coinsParent;
 
     private void OnCollisionEnter(Collision other)
     {
@@ -19,6 +20,8 @@ public class Breakable : MonoBehaviour
             // Destroy(gameObject);
             brokenObject.gameObject.SetActive(true);
             brokenObject.transform.SetParent(GameObject.Find("Room").transform);
+            coinsParent.gameObject.SetActive(true);
+            coinsParent.transform.SetParent(GameObject.Find("Room").transform);
             Destroy(gameObject);
         }
     }
