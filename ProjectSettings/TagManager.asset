@@ -34,6 +34,7 @@ TagManager:
   - Eraser
   - Floor
   - Target
+  - Poke
   layers:
   - Default
   - TransparentFX

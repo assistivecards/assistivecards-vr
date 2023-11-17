@@ -8,6 +8,7 @@ public class Lamp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        lampLight.SetActive(!lampLight.activeInHierarchy);
+        if (other.gameObject.tag == "Poke")
+            lampLight.SetActive(!lampLight.activeInHierarchy);
     }
 }
