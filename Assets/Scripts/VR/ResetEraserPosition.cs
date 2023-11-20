@@ -10,14 +10,15 @@ public class ResetEraserPosition : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Floor"))
         {
-            StartCoroutine("ResetEraserPositionCoroutine");
+            Invoke(nameof(ResetEraserPos), 5f);
         }
     }
 
-    IEnumerator ResetEraserPositionCoroutine()
+    public void ResetEraserPos()
     {
-        yield return new WaitForSeconds(5);
-        transform.position = eraserSocket.transform.position;
-        eraserSocket.interactablesSelected[0] = GetComponent<XRGrabInteractable>();
+        if (!GetComponent<XRGrabInteractable>().isSelected)
+        {
+            transform.position = eraserSocket.transform.position;
+        }
     }
 }
