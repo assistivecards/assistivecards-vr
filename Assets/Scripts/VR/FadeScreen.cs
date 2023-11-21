@@ -19,39 +19,41 @@ public class FadeScreen : MonoBehaviour
         }
     }
 
-    public void Fade(float alphaFrom, float alphaTo)
-    {
-        StartCoroutine(FadeRoutine(alphaFrom, alphaTo));
-    }
+    // public void Fade(float alphaFrom, float alphaTo)
+    // {
+    //     StartCoroutine(FadeRoutine(alphaFrom, alphaTo));
+    // }
 
     public void FadeIn()
     {
-        Fade(1, 0);
+        // Fade(1, 0);
+        LeanTween.alpha(gameObject, 0, fadeDuration);
     }
 
     public void FadeOut()
     {
-        Fade(0, 1);
+        // Fade(0, 1);
+        LeanTween.alpha(gameObject, 1, fadeDuration);
     }
 
-    public IEnumerator FadeRoutine(float alphaFrom, float alphaTo)
-    {
-        float timer = 0;
+    // public IEnumerator FadeRoutine(float alphaFrom, float alphaTo)
+    // {
+    //     float timer = 0;
 
-        while (timer <= fadeDuration)
-        {
-            Color newColor = fadeColor;
-            newColor.a = Mathf.Lerp(alphaFrom, alphaTo, timer / fadeDuration);
+    //     while (timer <= fadeDuration)
+    //     {
+    //         Color newColor = fadeColor;
+    //         newColor.a = Mathf.Lerp(alphaFrom, alphaTo, timer / fadeDuration);
 
-            meshRenderer.material.SetColor("_BaseColor", newColor);
+    //         meshRenderer.material.SetColor("_BaseColor", newColor);
 
-            timer += Time.deltaTime;
-            yield return null;
-        }
+    //         timer += Time.deltaTime;
+    //         yield return null;
+    //     }
 
-        Color newColor2 = fadeColor;
-        newColor2.a = alphaTo;
-        meshRenderer.material.SetColor("_BaseColor", newColor2);
+    //     Color newColor2 = fadeColor;
+    //     newColor2.a = alphaTo;
+    //     meshRenderer.material.SetColor("_BaseColor", newColor2);
 
-    }
+    // }
 }
