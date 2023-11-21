@@ -7,6 +7,7 @@ public class SelectScene : MonoBehaviour
 {
     public void DetectSelectedScene()
     {
-        SceneManager.LoadScene(gameObject.name);
+        // SceneManager.LoadScene(gameObject.name);
+        GameObject.Find("Transition Manager").GetComponent<SceneTransitionManager>().ChangeScene(gameObject.name);
     }
 }
