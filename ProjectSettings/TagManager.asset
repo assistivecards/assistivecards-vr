@@ -35,6 +35,7 @@ TagManager:
   - Floor
   - Target
   - Poke
+  - DartTip
   layers:
   - Default
   - TransparentFX
