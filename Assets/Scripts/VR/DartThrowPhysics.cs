@@ -8,6 +8,7 @@ public class DartThrowPhysics : MonoBehaviour
 {
     public List<Vector3> trackingPos = new List<Vector3>();
     public float velocity;
+    public bool hit;
 
     private void Update()
     {
@@ -26,7 +27,21 @@ public class DartThrowPhysics : MonoBehaviour
 
     public void ThrowDart(SelectExitEventArgs args)
     {
-        transform.Rotate(Vector3.right, -50);
+        var hitColliders = Physics.OverlapBox(transform.GetChild(0).GetComponent<BoxCollider>().bounds.center, transform.GetChild(0).GetComponent<BoxCollider>().size / 2, Quaternion.identity);
+
+        foreach (var collider in hitColliders)
+        {
+            if (collider.CompareTag("Target"))
+            {
+                hit = true;
+            }
+        }
+
+        if (!hit)
+        {
+            transform.Rotate(Vector3.right, -50);
+        }
+
         Vector3 direction = trackingPos[trackingPos.Count - 1] - trackingPos[0];
         GetComponent<Rigidbody>().AddForce(direction * velocity);
     }
