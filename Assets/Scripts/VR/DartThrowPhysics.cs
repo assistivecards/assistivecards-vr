@@ -27,7 +27,7 @@ public class DartThrowPhysics : MonoBehaviour
 
     public void ThrowDart(SelectExitEventArgs args)
     {
-        var hitColliders = Physics.OverlapBox(transform.GetChild(0).GetComponent<BoxCollider>().bounds.center, transform.GetChild(0).GetComponent<BoxCollider>().size / 2, Quaternion.identity);
+        var hitColliders = Physics.OverlapBox(transform.GetChild(0).GetComponent<BoxCollider>().bounds.center, transform.GetChild(0).GetComponent<BoxCollider>().size / 8, Quaternion.identity);
 
         foreach (var collider in hitColliders)
         {

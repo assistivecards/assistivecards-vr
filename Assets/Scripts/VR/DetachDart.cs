@@ -11,5 +11,7 @@ public class DetachDart : MonoBehaviour
         {
             gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         }
+
+        gameObject.GetComponent<DartThrowPhysics>().hit = false;
     }
 }
